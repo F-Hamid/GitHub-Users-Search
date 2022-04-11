@@ -113,6 +113,10 @@ const Wrapper = styled.article`
         background: var(--clr-primary-5);
         color: var(--clr-white);
       }
+      @media screen and (max-width: 420px) {
+        top: 1.5rem;
+        right: -1rem;
+      }
     }
   }
   .bio {
