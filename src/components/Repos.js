@@ -73,6 +73,7 @@ const Wrapper = styled.div`
   display: grid;
   justify-items: center;
   gap: 2rem;
+  margin: 3rem auto;
   @media (min-width: 800px) {
     grid-template-columns: 1fr 1fr;
   }

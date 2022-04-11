@@ -67,7 +67,14 @@ const Wrapper = styled.section`
   .item {
     border-radius: var(--radius);
     padding: 1rem 2rem;
-    background: var(--clr-white);
+    background-image: linear-gradient(
+      to right top,
+      #4d77ff,
+      #009cff,
+      #00baff,
+      #00d2fa,
+      #5ee6eb
+    );
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 3rem;

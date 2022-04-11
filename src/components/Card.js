@@ -19,13 +19,17 @@ const Card = () => {
   return (
     <Wrapper>
       <header>
-        <img src={avatar_url} alt={name}></img>
+        <div className="img-container">
+          <img src={avatar_url} alt={name}></img>
+        </div>
         <div>
           <h4>{name}</h4>
           {/* <p>@{twitter_username || ""}</p> */}
           <p>{twitter_username ? `@${twitter_username}` : ""}</p>
         </div>
-        <a href={html_url}>follow</a>
+        <a href={html_url} target="_blank" rel="noopener noreferrer">
+          follow
+        </a>
       </header>
       <p className="bio">{bio || ""}</p>
       <div className="links">
@@ -35,7 +39,7 @@ const Card = () => {
         <p>
           <MdLocationOn></MdLocationOn> {location || ""}
         </p>
-        <a href={`https://${blog}`}>
+        <a href={`https://${blog}`} target="_blank" rel="noopener noreferrer">
           <MdLink></MdLink>
           {blog}
         </a>
@@ -46,38 +50,46 @@ const Card = () => {
 
 // Styling
 const Wrapper = styled.article`
-  background: var(--clr-white);
+  background-image: linear-gradient(
+    to right top,
+    #42c2ff,
+    #6ed4f9,
+    #9ae4f4,
+    #c6f2f5,
+    #effffd
+  );
+
   padding: 1.5rem 2rem;
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   position: relative;
-  &::before {
-    content: "user";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-100%);
-    background: var(--clr-white);
-    color: var(--clr-grey-5);
-    border-top-right-radius: var(--radius);
-    border-top-left-radius: var(--radius);
-    text-transform: capitalize;
-    padding: 0.5rem 1rem 0 1rem;
-    letter-spacing: var(--spacing);
-    font-size: 1rem;
-  }
+  max-width: 90vw;
   header {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     column-gap: 1rem;
     margin-bottom: 1rem;
-    img {
-      width: 75px;
-      height: 75px;
+    position: relative;
+
+    .img-container {
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
+      background: var(--clr-grey-10);
+      z-index: 20;
+      position: absolute;
+      bottom: 50%;
+      left: 42%;
     }
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 4px;
+    }
+
     h4 {
       margin-bottom: 0.25rem;
     }
@@ -93,6 +105,10 @@ const Wrapper = styled.article`
       letter-spacing: var(--spacing);
       transition: var(--transition);
       cursor: pointer;
+      width: 5rem;
+      position: absolute;
+      top: 0;
+      right: 0.5rem;
       &:hover {
         background: var(--clr-primary-5);
         color: var(--clr-white);

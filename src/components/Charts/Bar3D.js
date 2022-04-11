@@ -22,10 +22,11 @@ ReactFC.fcRoot(FusionCharts, chart, FusionTheme);
 // STEP 4 - Creating the DOM element to pass the react-fusioncharts component
 const ExampleChart = ({ data }) => {
   const chartConfigs = {
-    type: "bar3d", // The chart type
+    type: "column2d", // The chart type
     width: "100%", // Width of the chart
     height: "400", // Height of the chart
     dataFormat: "json", // Data type
+
     dataSource: {
       // Chart Configuration
       chart: {
@@ -34,8 +35,9 @@ const ExampleChart = ({ data }) => {
         xAxisName: "Repos",
         yAxisNameFontSize: "16px",
         xAxisNameFontSize: "16px",
+        theme: "fusion",
 
-        // paletteColors: "#f0db4f , #fff,#0025",
+        paletteColors: "#4D77FF",
       },
       // Chart Data
       data: data,

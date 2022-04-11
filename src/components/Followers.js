@@ -16,7 +16,9 @@ const Followers = () => {
               <div>
                 <h4>{login}</h4>
               </div>
-              <a href={html_url}>{html_url}</a>
+              <a href={html_url} target="_blank" rel="noopener noreferrer">
+                {html_url}{" "}
+              </a>
             </article>
           );
         })}
@@ -31,6 +33,7 @@ const Wrapper = styled.article`
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   position: relative;
+  max-width: 90vw;
 
   &::before {
     content: " followers";
@@ -38,7 +41,8 @@ const Wrapper = styled.article`
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    background: var(--clr-white);
+
+    background-color: #fff;
     color: var(--clr-grey-5);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
@@ -63,6 +67,7 @@ const Wrapper = styled.article`
     grid-template-columns: auto 1fr;
     align-items: center;
     column-gap: 1rem;
+
     img {
       height: 100%;
       width: 45px;
@@ -71,6 +76,8 @@ const Wrapper = styled.article`
     }
     h4 {
       margin-bottom: 0;
+      text-align: center;
+      margin-left: -3rem;
     }
     a {
       color: var(--clr-grey-5);
