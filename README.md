@@ -1,5 +1,6 @@
-## React Project : F-Hamid
+## Github Search : F-Hamid
 
+> A single page app for searching users and their stats on github : Repos, Followers, Languages,... .
 > `Technologies used for this projetc :`
 
 # _React:_
